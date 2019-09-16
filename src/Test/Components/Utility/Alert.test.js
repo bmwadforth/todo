@@ -9,4 +9,9 @@ describe("Alert Component", () => {
         const wrapper = shallow(<Alert title="Test" status="success"/>);
         expect(wrapper.html()).toMatchSnapshot();
     });
+
+    it("Should Render With Success Class", () => {
+        const wrapper = shallow(<Alert title="Test" status="success"/>);
+        expect(wrapper.find(".alert-success")).toBeTruthy();
+    });
 });

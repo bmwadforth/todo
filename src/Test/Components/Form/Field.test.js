@@ -9,4 +9,14 @@ describe("Field Component", () => {
         const wrapper = shallow(<Field id="Test" title="Test" onChange={() => {}} required/>);
         expect(wrapper.html()).toMatchSnapshot();
     });
+
+    it("Should Render With Text Input Type", () => {
+        const wrapper = shallow(<Field id="Test" title="Test" type="text" onChange={() => {}} required/>);
+        expect(wrapper.find("input[type='text']")).toBeTruthy();
+    });
+
+    it("Should Render With Number Input Type", () => {
+        const wrapper = shallow(<Field id="Test" title="Test" type="number" onChange={() => {}} required/>);
+        expect(wrapper.find("input[type='number']")).toBeTruthy();
+    });
 });

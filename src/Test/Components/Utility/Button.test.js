@@ -9,4 +9,9 @@ describe("Button Component", () => {
         const wrapper = shallow(<Button title="Test" status="success"/>);
         expect(wrapper.html()).toMatchSnapshot();
     });
+
+    it("Should Render With Success Class", () => {
+        const wrapper = shallow(<Button title="Test" status="success"/>);
+        expect(wrapper.find(".button-success")).toBeTruthy();
+    });
 });
