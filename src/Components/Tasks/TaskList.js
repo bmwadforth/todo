@@ -1,21 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TaskItem from "./TaskItem";
 import uuid from "uuid/v4";
+import TaskRow from "./TaskRow";
 
 export default function TaskList(props) {
     return (
         <>
             <div className="task-list">
-                {props.tasks.map(task => {
-                    return <TaskItem
-                        key={uuid()}
-                        title={task.title}
-                        description={task.description}
-                        completed={task.completed}
-                        created={task.created}
-                        cutOff={task.cutOff}/>
-                })}
+                {props.tasks.length ?
+                    props.tasks.map(task => {
+                        return <TaskRow
+                            key={uuid()}
+                            title={task.title}
+                            description={task.description}
+                            completed={task.completed}
+                            created={task.created}
+                            cutOff={task.cutOff}/>
+                    })
+                    :
+                    <div className="task-item-none">No Tasks</div>}
             </div>
         </>
     );

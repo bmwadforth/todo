@@ -15,9 +15,9 @@ export default function TaskCreator(props) {
         id: null,
         title: "",
         description: "",
-        cutOff: new Date(),
-        created: new Date(),
-        completed: false
+        cutOff: null,
+        completed: false,
+        created: new Date()
     });
     const dispatch = useDispatch();
     const {data: tasks} = useSelector(store => store.Tasks);
@@ -38,7 +38,8 @@ export default function TaskCreator(props) {
         <div className="task-creator">
             {taskCreated && <Alert title="New Task Added" status="primary"/>}
             {error && <Alert title={error} status="danger"/>}
-            <WebForm actionTitle="New Task" onSubmit={newTask}>
+            <h1>New Task</h1>
+            <WebForm actionTitle="Add Task" onSubmit={newTask}>
                 <Field id="task-title" title="Task Title" onChange={e => {
                     setTask({...task, title: e.target.value});
                 }} value={task.title} required={true}/>
@@ -49,7 +50,7 @@ export default function TaskCreator(props) {
 
                 <Field id="task-cutOff" title="Task Due Date" onChange={e => {
                     setTask({...task, cutOff: e.target.value});
-                }} value={task.cutOff} type="date" required={true}/>
+                }} value={task.cutOff} type="date" required={false}/>
             </WebForm>
         </div>
     );
