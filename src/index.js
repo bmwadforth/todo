@@ -6,7 +6,7 @@ import {applyMiddleware, createStore} from "redux";
 import {logger} from "redux-logger";
 import rootReducer from "./Reducers/index";
 import {Provider} from "react-redux";
-import "./Assets/index.scss";
+import "./Assets/Styles/index.scss";
 
 const store = createStore(rootReducer, applyMiddleware(logger));
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

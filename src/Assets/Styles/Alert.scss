@@ -1,0 +1,40 @@
+@import "Variables";
+
+.alert {
+  width: 400px;
+  .alert-body {
+    padding: 1em;
+    border-radius: $border-radius;
+    min-height: 50px;
+    height: auto;
+    &.alert-success {
+      background-color: $success;
+    }
+
+    &.alert-danger {
+      background-color: $danger;
+    }
+
+    .alert-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .icon {
+        svg {
+          height: 25px;
+        }
+
+      }
+
+      p {
+        margin: 0;
+        font-weight: bold;
+      }
+
+    }
+
+    .alert-content {
+
+    }
+  }
+}

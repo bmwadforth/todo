@@ -9,12 +9,12 @@ function App() {
 
     return (
         <div className="App">
-            <div className="content">
+            <section>
                 <Router>
                     <TaskCreator/>
                     <TaskList tasks={Object.values(tasks)}/>
                 </Router>
-            </div>
+            </section>
         </div>
     );
 }
