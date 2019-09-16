@@ -9,6 +9,7 @@ import {TaskExists} from "../../Actions/TaskActions";
 import Alert from "../Utility/Alert";
 
 export default function TaskCreator(props) {
+    const [taskCreated, setTaskCreated] = useState(false);
     const [error, setError] = useState(null);
     const [task, setTask] = useState({
         id: null,
@@ -25,15 +26,18 @@ export default function TaskCreator(props) {
         e.preventDefault();
         if (TaskExists(task, tasks)) {
             setError("Task Already Exists");
+            setTaskCreated(false);
         } else {
             dispatch({type: ACTIONS.TASK.CREATE, payload: {...task, id: uuid()}});
+            setError(null);
+            setTaskCreated(true);
         }
     }
 
     return (
         <div className="task-creator">
+            {taskCreated && <Alert title="New Task Added" status="success"/>}
             {error && <Alert title={error} status="danger"/>}
-            {task.id && <Alert title="New Task Added" status="success"/>}
             <WebForm actionTitle="New Task" onSubmit={newTask}>
                 <Field id="task-title" title="Task Title" onChange={e => {
                     setTask({...task, title: e.target.value});
