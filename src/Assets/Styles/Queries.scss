@@ -35,6 +35,11 @@
                 padding: 50px 10%;
                 .task-row-body {
                     font-size: 14px !important;
+                    flex-direction: column !important;
+                    .task-actions {
+                        margin-top: 1em;
+                        align-items: center !important;
+                    }
                 }
             }
         }
