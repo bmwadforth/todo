@@ -7,15 +7,16 @@ import {useDispatch, useSelector} from "react-redux";
 import {ACTIONS} from "../../Actions/Actions";
 import {TaskExists} from "../../Actions/TaskActions";
 import Alert from "../Utility/Alert";
+import Ephemeral from "../Utility/EphemeralContainer";
 
 export default function TaskCreator(props) {
-    const [taskCreated, setTaskCreated] = useState(false);
-    const [error, setError] = useState(null);
+    const [taskCreated, setTaskCreated] = useState(undefined);
+    const [error, setError] = useState(undefined);
     const [task, setTask] = useState({
-        id: null,
+        id: undefined,
         title: "",
         description: "",
-        cutOff: null,
+        cutOff: undefined,
         completed: false,
         created: new Date()
     });
@@ -36,9 +37,9 @@ export default function TaskCreator(props) {
 
     return (
         <div className="task-creator">
-            {taskCreated && <Alert title="New Task Added" status="primary"/>}
+            {taskCreated && <Ephemeral countdown={3000}><Alert title="New Task Added" status="success"/></Ephemeral>}
             {error && <Alert title={error} status="danger"/>}
-            <h1>New Task</h1>
+            <h2>Create Task</h2>
             <WebForm actionTitle="Add Task" onSubmit={newTask}>
                 <Field id="task-title" title="Task Title" onChange={e => {
                     setTask({...task, title: e.target.value});

@@ -10,6 +10,7 @@ function App() {
     return (
         <div className="App">
             <section>
+                <h1>SleevesUp Coding Challenge</h1>
                 <Router>
                     <TaskCreator/>
                     <TaskList tasks={Object.values(tasks)}/>

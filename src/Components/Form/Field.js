@@ -15,7 +15,7 @@ Field.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.any.isRequired,
+    value: PropTypes.any,
     required: PropTypes.bool.isRequired,
     type: PropTypes.string
 };

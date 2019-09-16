@@ -18,11 +18,13 @@
     }
 
     &.alert-success {
-      background-color: $success;
+      border-left: 5px solid $success;
+      background-color: rgba($success, 0.3);
     }
 
     &.alert-danger {
-      background-color: $danger;
+      border-left: 5px solid $danger;
+      background-color: rgba($danger, 0.3);
     }
 
     .alert-title {

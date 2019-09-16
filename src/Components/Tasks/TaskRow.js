@@ -1,17 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
+import Icon, {ICONS} from "../Utility/Icons";
 
 export default function TaskRow(props){
-    function formatDescription(desc){
-        if(desc.length > 15) {
-            return desc.slice(0, 15) + "...";
-        }
-        return desc;
-    }
+    const [active, setActive] = useState(false);
 
     return (
-        <div className="task-row">
-            <p>{props.title}</p>
+        <div className={`task-row ${active && "task-row-collapse"}`} onClick={() => {
+            setActive(!active);
+        }}>
+            <div className="task-row-title">
+                <p>{props.title}</p>
+                <Icon icon={ICONS.CARET} />
+            </div>
+            {active &&
+            <div className="task-row-body">
+                <p>Description: {props.description}</p>
+            </div>}
         </div>
     )
 }
@@ -21,5 +26,5 @@ TaskRow.propTypes = {
     description: PropTypes.string,
     completed: PropTypes.bool,
     created: PropTypes.object.isRequired,
-    cutOff: PropTypes.string.isRequired
+    cutOff: PropTypes.string
 };
