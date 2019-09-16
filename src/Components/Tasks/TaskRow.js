@@ -12,10 +12,6 @@ export default function TaskRow(props){
     return (
         <div className="task-row">
             <p>{props.title}</p>
-            <p>{formatDescription(props.description)}</p>
-            <p>{props.completed ? "Yes" : "No"}</p>
-            <p>{new Date(props.cutOff).toDateString()}</p>
-            <p>{new Date(props.created).toDateString()}</p>
         </div>
     )
 }

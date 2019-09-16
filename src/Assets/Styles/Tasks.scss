@@ -8,6 +8,8 @@
     margin: 1em 0;
     padding: 0.5em;
     background-color: rgba($primary, 1);
+    border: 2px solid $primary;
+    border-radius: $border-radius;
     color: #FFF;
 
     p {
@@ -15,8 +17,13 @@
       margin: 0;
     }
 
+    transition: border $transition-time ease-in-out,
+    background-color $transition-time ease-in-out,
+    color $transition-time ease-in-out;
     &:hover {
-      background-color: rgba($primary, 0.3);
+      background-color: rgba(#FFF, 1);
+      color: #000;
+      cursor: pointer;
     }
 
   }
