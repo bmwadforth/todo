@@ -4,14 +4,16 @@
     border-radius: $border-radius;
 
     .task-row {
+      margin: 1em 0 0;
         .task-row-heading {
             height: 40px;
-            margin: 1em 0 0;
             padding: 0.5em;
             border-left: 5px solid $warning;
+
             &.task-completed {
-              border-left: 5px solid $success;
+                border-left: 5px solid $success;
             }
+
             background-color: rgba(128, 128, 128, 0.2);
 
             .task-row-title {
@@ -40,9 +42,11 @@
 
             &:hover {
                 background-color: rgba($warning, 0.1);
+
                 &.task-completed {
-                  background-color: rgba($success, 0.1);
+                    background-color: rgba($success, 0.1);
                 }
+
                 cursor: pointer;
             }
 
@@ -75,10 +79,12 @@
             .task-actions {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-end;
 
                 button {
                     margin: 0 0 1em;
+                    background-color: rgba(128, 128, 128, 0);
+                    color: #000;
                 }
             }
 
@@ -86,9 +92,9 @@
     }
 
     .task-row-none {
-        height: 50px;
+        height: 40px;
         margin-top: 0.5em;
-        padding: 1em;
+        padding: 0.5em;
         border-radius: $border-radius;
         color: rgba(128, 128, 128, 0.8);
         background: repeating-linear-gradient(

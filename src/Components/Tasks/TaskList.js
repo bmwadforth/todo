@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import uuid from "uuid/v4";
-import TaskRow from "./TaskRow";
+import TaskListItem from "./TaskListItem";
 
 export default function TaskList(props) {
     return (
@@ -9,14 +9,13 @@ export default function TaskList(props) {
             <h2>Your Tasks</h2>
             {props.tasks.length ?
                 props.tasks.map(task => {
-                    return <TaskRow
+                    return <TaskListItem
                         key={uuid()}
                         id={task.id}
                         title={task.title}
                         description={task.description}
                         completed={task.completed}
-                        created={task.created}
-                        cutOff={task.cutOff}/>
+                        created={task.created}/>
                 })
                 :
                 <div className="task-row-none">No Tasks</div>}
@@ -31,7 +30,6 @@ TaskList.propTypes = {
             title: PropTypes.string.isRequired,
             description: PropTypes.string,
             completed: PropTypes.bool,
-            created: PropTypes.object.isRequired,
-            cutOff: PropTypes.string
+            created: PropTypes.object.isRequired
         }))
 };

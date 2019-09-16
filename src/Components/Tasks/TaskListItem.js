@@ -5,7 +5,7 @@ import Button from "../Utility/Button";
 import {useDispatch} from "react-redux";
 import {ACTIONS} from "../../Actions/Actions";
 
-export default function TaskRow(props) {
+export default function TaskListItem(props) {
     const [active, setActive] = useState(false);
     const dispatch = useDispatch();
 
@@ -24,11 +24,10 @@ export default function TaskRow(props) {
                 <div className="task-details">
                     <p><strong>Description:</strong> {props.description}</p>
                     <p><strong>Completed:</strong> {props.completed ? "Yes" : "No"}</p>
-                    {props.cutOff && <p><strong>Due Date:</strong> {new Date(props.cutOff).toDateString()}</p>}
                     <p><strong>Created:</strong> {new Date(props.created).toDateString()}</p>
                 </div>
                 <div className="task-actions">
-                    <Button title="Complete Task" status="primary" onClick={() => dispatch({type: ACTIONS.TASK.COMPLETE, payload: props.id})} outline/>
+                    {!props.completed && <Button title="Complete Task" status="success" onClick={() => dispatch({type: ACTIONS.TASK.COMPLETE, payload: props.id})} outline/>}
                     <Button title="Delete Task" status="danger" onClick={() => dispatch({type: ACTIONS.TASK.DELETE, payload: props.id})} outline/>
                 </div>
             </div>}
@@ -36,11 +35,10 @@ export default function TaskRow(props) {
     )
 }
 
-TaskRow.propTypes = {
+TaskListItem.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
     completed: PropTypes.bool,
     created: PropTypes.object.isRequired,
-    cutOff: PropTypes.string
 };

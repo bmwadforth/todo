@@ -16,7 +16,6 @@ export default function TaskCreator(props) {
         id: undefined,
         title: "",
         description: "",
-        cutOff: undefined,
         completed: false,
         created: new Date()
     });
@@ -48,10 +47,6 @@ export default function TaskCreator(props) {
                 <Field id="task-desc" title="Task Description" onChange={e => {
                     setTask({...task, description: e.target.value});
                 }} value={task.description} required={false}/>
-
-                <Field id="task-cutOff" title="Task Due Date" onChange={e => {
-                    setTask({...task, cutOff: e.target.value});
-                }} value={task.cutOff} type="date" required={false}/>
             </WebForm>
         </div>
     );

@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "../Utility/Button";
 
 export default function WebForm(props) {
     return (
         <form onSubmit={props.onSubmit}>
             <div className="web-form">
                 {props.children}
-                <button type="submit">{props.actionTitle}</button>
+                <Button title={props.actionTitle} status="primary" type="submit" />
             </div>
         </form>
     )
