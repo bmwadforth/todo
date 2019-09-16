@@ -1,7 +1,6 @@
 @import "Variables";
 
 .task-list {
-  width: 70%;
   .task-row {
     display: flex;
     flex-direction: row;
@@ -20,5 +19,22 @@
       background-color: rgba($primary, 0.3);
     }
 
+  }
+
+  .task-row-none {
+    height: 50px;
+    padding: 1em;
+    border-radius: $border-radius;
+    background: repeating-linear-gradient(
+                    45deg,
+                    rgba(128, 128, 128, 0.2),
+                    rgba(128, 128, 128, 0.2) 10px,
+                    rgba(128, 128, 128, 0.3) 10px,
+                    rgba(128, 128, 128, 0.3) 20px
+    );
+
+    &:hover {
+
+    }
   }
 }

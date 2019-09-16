@@ -18,7 +18,7 @@ export default function TaskList(props) {
                             cutOff={task.cutOff}/>
                     })
                     :
-                    <div className="task-item-none">No Tasks</div>}
+                    <div className="task-row-none">No Tasks</div>}
             </div>
         </>
     );

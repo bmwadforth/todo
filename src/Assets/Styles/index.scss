@@ -12,14 +12,20 @@
 * {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  width: 100%;
 }
 
 html {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
   textarea, select, input, button {
     margin: 0;
     outline: none;
   }
   section {
-    padding: 50px 30% 0;
+    padding: 50px 35% 0;
   }
 }
