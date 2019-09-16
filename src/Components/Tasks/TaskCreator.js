@@ -5,7 +5,7 @@ import Field from "../Form/Field";
 import WebForm from "../Form/WebForm";
 import {useDispatch, useSelector} from "react-redux";
 import {ACTIONS} from "../../Actions/Actions";
-import {TaskExists} from "../../Actions/TaskActions";
+import {TaskExists} from "../../Actions/TaskHelpers";
 import Alert from "../Utility/Alert";
 import Ephemeral from "../Utility/EphemeralContainer";
 
