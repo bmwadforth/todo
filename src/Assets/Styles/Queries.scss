@@ -1,0 +1,42 @@
+@media only screen and (max-width: 1500px) {
+    html {
+        body {
+            section {
+                padding: 50px 30% 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    html {
+        body {
+            section {
+                padding: 50px 25% 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        body {
+            section {
+                padding: 50px 10% 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    html {
+        body {
+            section {
+                padding: 50px 10%;
+                .task-row-body {
+                    font-size: 14px !important;
+                }
+            }
+        }
+    }
+}
