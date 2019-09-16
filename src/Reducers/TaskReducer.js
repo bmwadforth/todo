@@ -1,3 +1,5 @@
+import {ACTIONS} from "../Actions/Actions";
+
 const initialState = {
     data: [],
     errors: {}
@@ -5,6 +7,14 @@ const initialState = {
 
 export default function TaskReducer(state = initialState, action){
     switch (action.type){
+        case ACTIONS.TASK.CREATE:
+            return {
+                ...state
+            };
+        case ACTIONS.TASK.DELETE:
+            return {
+                ...state
+            };
         default:
             return {...state}
     }

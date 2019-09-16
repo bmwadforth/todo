@@ -13,5 +13,6 @@ TaskItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
     completed: PropTypes.bool,
-    created: PropTypes.object.isRequired
+    created: PropTypes.object.isRequired,
+    cutOff: PropTypes.object.isRequired
 };

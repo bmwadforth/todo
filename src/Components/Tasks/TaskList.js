@@ -9,4 +9,13 @@ export default function TaskList(props) {
     );
 }
 
-TaskList.propTypes = {};
+TaskList.propTypes = {
+    tasks: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            description: PropTypes.string,
+            completed: PropTypes.bool,
+            created: PropTypes.object.isRequired,
+            cutOff: PropTypes.object.isRequired
+    }))
+};
