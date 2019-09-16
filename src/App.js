@@ -1,13 +1,20 @@
 import React from 'react';
 import TaskCreator from "./Components/Tasks/TaskCreator";
 import TaskList from "./Components/Tasks/TaskList";
-import {GetTasks} from "./Actions/TaskActions";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 function App() {
+    const {data: tasks} = useSelector(store => store.Tasks);
+
     return (
         <div className="App">
-            <TaskCreator/>
-            <TaskList tasks={GetTasks()}/>
+            <div className="content">
+                <Router>
+                    <TaskCreator/>
+                    <TaskList tasks={Object.values(tasks)}/>
+                </Router>
+            </div>
         </div>
     );
 }

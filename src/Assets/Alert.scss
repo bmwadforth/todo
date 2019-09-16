@@ -1,0 +1,15 @@
+@import "Variables";
+
+.alert {
+  width: 100%;
+  .alert-body {
+    height: 250px;
+    &.alert-success {
+      background-color: $success;
+    }
+
+    &.alert-danger {
+      background-color: $danger;
+    }
+  }
+}

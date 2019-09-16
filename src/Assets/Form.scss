@@ -1,34 +1,46 @@
 @import "Variables";
 
 form {
-  .form-item {
-    margin-bottom: 1em;
-    label {
-      display: block;
-      font-size: 14px;
-    }
+  .web-form {
+    width: 100%;
+    margin: 2em auto;
+    .form-item {
+      margin-bottom: 1em;
 
-    input, textarea {
-      border: 2px solid rgba(128, 128, 128, 0.2);
-      width: 200px;
+      label {
+        display: block;
+        font-weight: bold;
+        font-size: 14px;
+      }
 
-      transition: border $transition-time ease-in-out;
-      &:hover {
-        border: 2px solid rgba(128, 128, 128, 0.4);
+      input, textarea {
+        border: 2px solid rgba(128, 128, 128, 0.2);
+        width: 200px;
+
+        transition: border $transition-time ease-in-out;
+
+        &:hover {
+          border: 2px solid rgba(128, 128, 128, 0.4);
+        }
       }
     }
-  }
 
-  button {
-    border: 2px solid rgba(128, 128, 128, 0.2);
-    background-color: #FFF;
-    border-radius: $border-radius;
-    padding: 0.4em;
+    button {
+      width: 125px;
+      font-size: 14px;
+      font-weight: bold;
+      border: 2px solid rgba(128, 128, 128, 0.2);
+      background-color: #FFF;
+      margin: 0;
+      padding: 0.5em;
 
-    transition: border $transition-time ease-in-out;
-    &:hover {
-      border: 2px solid rgba(128, 128, 128, 0.4);
-      cursor: pointer;
+      transition: border $transition-time ease-in-out, background-color $transition-time ease-in-out;
+
+      &:hover {
+        background-color: rgba($warning, 0.6);
+        border: 2px solid rgba(128, 128, 128, 0);
+        cursor: pointer;
+      }
     }
   }
 }

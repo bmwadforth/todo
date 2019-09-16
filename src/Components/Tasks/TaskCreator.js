@@ -2,32 +2,50 @@ import React, {useState} from "react";
 import uuid from "uuid/v4";
 import PropTypes from "prop-types";
 import Field from "../Form/Field";
+import WebForm from "../Form/WebForm";
+import {useDispatch, useSelector} from "react-redux";
+import {ACTIONS} from "../../Actions/Actions";
+import {TaskExists} from "../../Actions/TaskActions";
+import Alert from "../Utility/Alert";
 
 export default function TaskCreator(props) {
-    const [task, setTask] = useState({id: uuid(), title: "", description: "", cutOff: new Date(), created: new Date()});
+    const [error, setError] = useState(null);
+    const [task, setTask] = useState({
+        id: null,
+        title: "",
+        description: "",
+        cutOff: new Date(),
+        created: new Date(),
+        completed: false
+    });
+    const dispatch = useDispatch();
+    const {data: tasks} = useSelector(store => store.Tasks);
 
     function newTask(e) {
         e.preventDefault();
-        console.log(JSON.stringify(task));
+        if (TaskExists(task, tasks)) {
+            setError("Task Already Exists");
+        } else {
+            dispatch({type: ACTIONS.TASK.CREATE, payload: {...task, id: uuid()}});
+        }
     }
 
     return (
         <div className="task-creator">
-            <form onSubmit={newTask}>
-                <Field id="task-title" title="Title" onChange={e => {
+            {error && <Alert title={error} status="danger"/>}
+            <WebForm actionTitle="New Task" onSubmit={newTask}>
+                <Field id="task-title" title="Task Title" onChange={e => {
                     setTask({...task, title: e.target.value});
                 }} value={task.title} required={true}/>
 
-                <Field id="task-desc" title="Description" onChange={e => {
+                <Field id="task-desc" title="Task Description" onChange={e => {
                     setTask({...task, description: e.target.value});
                 }} value={task.description} required={false}/>
 
                 <Field id="task-cutOff" title="Task Due Date" onChange={e => {
                     setTask({...task, cutOff: e.target.value});
                 }} value={task.cutOff} type="date" required={true}/>
-                <button type="submit">New Task</button>
-            </form>
-
+            </WebForm>
         </div>
     );
 }
