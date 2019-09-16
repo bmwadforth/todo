@@ -1,73 +1,106 @@
 @import "Variables";
 
 .task-list {
-  border-radius: $border-radius;
-  .task-row {
-    height: 40px;
-    margin: 1em 0 0;
-    padding: 0.5em;
-    border-left: 5px solid $warning;
-    background-color: rgba(128, 128, 128, 0.1);
-
-    .task-row-title {
-      display: flex;
-      flex-direction: row;
-      .icon {
-        width: 25px;
-        svg {
-          transition: transform $transition-time ease-in-out;
-          transform: rotate(180deg);
-          height: 25px;
-        }
-      }
-
-      p {
-        flex: 1;
-        margin: 0;
-      }
-    }
-
-    .task-row-body {
-      background-color: rgba(128, 128, 128, 0.1);
-      p {
-        margin: 0;
-      }
-
-    }
-
-    transition: border $transition-time ease-in-out,
-    background-color $transition-time ease-in-out,
-    color $transition-time ease-in-out;
-    &:hover {
-      background-color: rgba($warning, 0.1);
-      cursor: pointer;
-    }
-
-    &.task-row-collapse {
-      .icon {
-        svg {
-          transform: rotate(0deg);
-        }
-      }
-    }
-
-  }
-
-  .task-row-none {
-    height: 50px;
-    padding: 1em;
     border-radius: $border-radius;
-    color: rgba(128, 128, 128, 0.8);
-    background: repeating-linear-gradient(
-                    45deg,
-                    rgba(128, 128, 128, 0.2),
-                    rgba(128, 128, 128, 0.2) 10px,
-                    rgba(128, 128, 128, 0.3) 10px,
-                    rgba(128, 128, 128, 0.3) 20px
-    );
 
-    &:hover {
+    .task-row {
+        .task-row-heading {
+            height: 40px;
+            margin: 1em 0 0;
+            padding: 0.5em;
+            border-left: 5px solid $warning;
+            &.task-completed {
+              border-left: 5px solid $success;
+            }
+            background-color: rgba(128, 128, 128, 0.2);
 
+            .task-row-title {
+                display: flex;
+                flex-direction: row;
+
+                .icon {
+                    width: 25px;
+
+                    svg {
+                        transition: transform $transition-time ease-in-out;
+                        transform: rotate(180deg);
+                        height: 25px;
+                    }
+                }
+
+                p {
+                    flex: 1;
+                    margin: 0;
+                }
+            }
+
+            transition: border $transition-time ease-in-out,
+            background-color $transition-time ease-in-out,
+            color $transition-time ease-in-out;
+
+            &:hover {
+                background-color: rgba($warning, 0.1);
+                &.task-completed {
+                  background-color: rgba($success, 0.1);
+                }
+                cursor: pointer;
+            }
+
+            &.task-row-collapse {
+                .icon {
+                    svg {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+
+        }
+
+        .task-row-body {
+            display: flex;
+            font-size: 16px;
+            flex-direction: row;
+            padding: 1em;
+            background-color: rgba(128, 128, 128, 0.1);
+            border-radius: $border-radius;
+            transition: visibility $transition-time ease-in-out;
+
+            p {
+                margin: 0 0 0.5em;
+            }
+
+            .task-details {
+            }
+
+            .task-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                button {
+                    margin: 0 0 1em;
+                }
+            }
+
+        }
     }
-  }
+
+    .task-row-none {
+        height: 50px;
+        margin-top: 0.5em;
+        padding: 1em;
+        border-radius: $border-radius;
+        color: rgba(128, 128, 128, 0.8);
+        background: repeating-linear-gradient(
+                        45deg,
+                        rgba(128, 128, 128, 0.2),
+                        rgba(128, 128, 128, 0.2) 10px,
+                        rgba(128, 128, 128, 0.3) 10px,
+                        rgba(128, 128, 128, 0.3) 20px
+        );
+
+        &:hover {
+
+        }
+    }
 }

@@ -6,11 +6,12 @@ import TaskRow from "./TaskRow";
 export default function TaskList(props) {
     return (
         <div className="task-list">
-            <h2>View Tasks</h2>
+            <h2>Your Tasks</h2>
             {props.tasks.length ?
                 props.tasks.map(task => {
                     return <TaskRow
                         key={uuid()}
+                        id={task.id}
                         title={task.title}
                         description={task.description}
                         completed={task.completed}
@@ -26,6 +27,7 @@ export default function TaskList(props) {
 TaskList.propTypes = {
     tasks: PropTypes.arrayOf(
         PropTypes.shape({
+            id: PropTypes.string.isRequired,
             title: PropTypes.string.isRequired,
             description: PropTypes.string,
             completed: PropTypes.bool,

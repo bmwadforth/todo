@@ -18,10 +18,20 @@ export default function TaskReducer(state = initialState, action){
                 }
             };
         case ACTIONS.TASK.DELETE:
+            let tasks = {...state.data};
+            delete tasks[action.payload];
             return {
                 ...state,
-                data: {...state.data, ...action.payload}
+                data: {...tasks}
             };
+        case ACTIONS.TASK.COMPLETE: {
+            let tasks = {...state.data};
+            tasks[action.payload].completed = true;
+            return {
+                ...state,
+                data: {...tasks}
+            };
+        }
         default:
             return {...state}
     }

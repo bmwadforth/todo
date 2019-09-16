@@ -1,0 +1,55 @@
+@import "Variables";
+
+button {
+    width: 125px;
+    font-size: 14px;
+    border: 2px solid rgba($primary, 0.2);
+    border-radius: $border-radius;
+    background-color: $primary;
+    color: #FFF;
+    padding: 0.5em;
+
+    transition: border $transition-time ease-in-out,
+    background-color $transition-time ease-in-out,
+    color $transition-time ease-in-out;
+
+    &:hover {
+        background-color: rgba(#FFF, 1);
+        border: 2px solid rgba($primary, 0.8);
+        color: #000;
+        cursor: pointer;
+    }
+
+    &.button-success {
+        background-color: $success;
+        border: 2px solid rgba($success, 0.2);
+        &:hover {
+            background-color: rgba($success, 0);
+            border: 2px solid rgba($success, 0.8);
+            color: #000;
+            cursor: pointer;
+        }
+    }
+
+    &.button-warning {
+        background-color: $warning;
+        border: 2px solid rgba($warning, 0.2);
+        &:hover {
+            background-color: rgba($warning, 0);
+            border: 2px solid rgba($warning, 0.8);
+            color: #000;
+            cursor: pointer;
+        }
+    }
+
+    &.button-danger {
+        background-color: $danger;
+        border: 2px solid rgba($danger, 0.2);
+        &:hover {
+            background-color: rgba($danger, 0);
+            border: 2px solid rgba($danger, 0.8);
+            color: #000;
+            cursor: pointer;
+        }
+    }
+}

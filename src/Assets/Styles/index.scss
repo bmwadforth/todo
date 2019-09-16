@@ -6,6 +6,7 @@
 @import "Form";
 @import "Alert";
 @import "Badge";
+@import "Button";
 
 @import "Tasks";
 
@@ -34,6 +35,9 @@ html {
     outline: none;
   }
   section {
-    padding: 50px 35% 0;
+    padding: 50px 40% 0;
+    .task-creator {
+      margin-bottom: 1em;
+    }
   }
 }
