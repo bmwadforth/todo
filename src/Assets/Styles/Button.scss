@@ -22,7 +22,7 @@ button {
     background-color $transition-time ease-in-out,
     color $transition-time ease-in-out;
 
-    @include button-config();
+    @include button-config($primary);
 
     &.button-success {
         @include button-config($success);

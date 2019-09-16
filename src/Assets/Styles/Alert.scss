@@ -1,53 +1,48 @@
 @import "Variables";
 
+@mixin alert-config($color: $primary) {
+    border-left: 5px solid $color;
+    background-color: rgba($color, 0.3);
+}
+
 .alert {
-  margin: 1em 0;
-  .alert-body {
-    padding: 1em;
-    border-radius: $border-radius;
-    min-height: 50px;
-    height: auto;
-    &.alert-primary {
-      background-color: $primary;
-      svg {
-        path {
-          fill: #FFF !important;
-        }
-      }
-      color: #FFF;
-    }
+    margin: 1em 0;
 
-    &.alert-success {
-      border-left: 5px solid $success;
-      background-color: rgba($success, 0.3);
-    }
+    .alert-body {
+        padding: 1em;
+        border-radius: $border-radius;
+        min-height: 50px;
+        height: auto;
 
-    &.alert-danger {
-      border-left: 5px solid $danger;
-      background-color: rgba($danger, 0.3);
-    }
-
-    .alert-title {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      .icon {
-        flex: 1;
-        svg {
-          height: 25px;
+        &.alert-success {
+            @include alert-config($success)
         }
 
-      }
+        &.alert-warning {
+            @include alert-config($warning)
+        }
 
-      p {
-        flex: 9;
-        margin: 0;
-      }
+        &.alert-danger {
+            @include alert-config($danger);
+        }
 
+        .alert-title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .icon {
+                flex: 1;
+
+                svg {
+                    height: 25px;
+                }
+            }
+
+            p {
+                flex: 9;
+                margin: 0;
+            }
+        }
     }
-
-    .alert-content {
-
-    }
-  }
 }
