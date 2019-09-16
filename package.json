@@ -36,8 +36,11 @@
   },
   "devDependencies": {
     "enzyme": "^3.10.0",
+    "enzyme-adapter-react-15": "^1.4.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.9.0",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3"
   }
 }

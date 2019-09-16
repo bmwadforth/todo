@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WebForm Component Should Match Snapshot 1`] = `"<form><div class=\\"web-form\\"><button class=\\"button button-primary\\" type=\\"submit\\">Test</button></div></form>"`;

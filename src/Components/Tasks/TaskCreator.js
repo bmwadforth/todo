@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {ACTIONS} from "../../Actions/Actions";
 import {TaskExists} from "../../Actions/TaskHelpers";
 import Alert from "../Utility/Alert";
-import Ephemeral from "../Utility/EphemeralContainer";
+import Ephemeral from "../Utility/Ephemeral";
 
 export default function TaskCreator(props) {
     const [taskCreated, setTaskCreated] = useState(undefined);

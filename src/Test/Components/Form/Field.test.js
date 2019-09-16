@@ -1,12 +1,12 @@
 import React from 'react';
-import Alert from "../../../Components/Utility/Alert";
 import {shallow, configure} from "enzyme";
 import Adapter from 'enzyme-adapter-react-16';
+import Field from "../../../Components/Form/Field";
 configure({adapter: new Adapter()});
 
-describe("Alert Component", () => {
+describe("Field Component", () => {
     it("Should Match Snapshot", () => {
-        const wrapper = shallow(<Alert title="Test" status="success"/>);
+        const wrapper = shallow(<Field id="Test" title="Test" onChange={() => {}} required/>);
         expect(wrapper.html()).toMatchSnapshot();
     });
 });

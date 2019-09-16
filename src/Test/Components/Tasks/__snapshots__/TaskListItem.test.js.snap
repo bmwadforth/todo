@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskListItem Component Should Match Snapshot 1`] = `"<div class=\\"task-row\\"><div class=\\"task-row-heading false undefined\\"><div class=\\"task-row-title\\"><p>Test</p><div class=\\"icon\\"><span><svg>caret.svg</svg></span></div></div></div></div>"`;

@@ -1,12 +1,12 @@
 import React from 'react';
 import {shallow, configure} from "enzyme";
 import Adapter from 'enzyme-adapter-react-16';
-import App from "../App";
-import {Provider} from "react-redux";
+import TaskCreator from "../../../Components/Tasks/TaskCreator";
 import configureStore from "redux-mock-store";
+import {Provider} from "react-redux";
 configure({adapter: new Adapter()});
 
-describe("App Component", () => {
+describe("TaskCreator Component", () => {
     const initialState = {Tasks: {data: {}}};
     const mockStore = configureStore();
     let store;
@@ -16,7 +16,7 @@ describe("App Component", () => {
     });
 
     it("Should Match Snapshot", () => {
-        const wrapper = shallow(<Provider store={store}><App /></Provider>);
+        const wrapper = shallow(<Provider store={store}><TaskCreator /></Provider>);
         expect(wrapper.html()).toMatchSnapshot();
     });
 });
