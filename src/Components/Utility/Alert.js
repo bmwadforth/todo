@@ -10,7 +10,7 @@ export default function Alert(props){
             case "danger":
                 return ICONS.ERROR;
             default:
-                return ICONS.ERROR;
+                return ICONS.SUCCESS;
         }
     }
 
@@ -31,5 +31,5 @@ export default function Alert(props){
 
 Alert.propTypes = {
     title: PropTypes.string.isRequired,
-    status: PropTypes.oneOf(["success", "danger"]).isRequired
+    status: PropTypes.oneOf(["success", "primary", "danger"]).isRequired
 };

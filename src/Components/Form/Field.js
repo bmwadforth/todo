@@ -4,10 +4,9 @@ import PropTypes from "prop-types";
 export default function Field(props) {
     return (
         <div className="form-item">
-            <label htmlFor={props.id}>{props.title}</label>
             <input id={props.id} type={props.type ? props.type : "text"} onChange={e => {
                 props.onChange(e);
-            }} value={props.value} required={props.required}/>
+            }} value={props.value} placeholder={props.title} required={props.required}/>
         </div>
     );
 }

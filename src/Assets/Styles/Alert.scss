@@ -8,6 +8,16 @@
     border-radius: $border-radius;
     min-height: 50px;
     height: auto;
+    &.alert-primary {
+      background-color: $primary;
+      svg {
+        path {
+          fill: #FFF !important;
+        }
+      }
+      color: #FFF;
+    }
+
     &.alert-success {
       background-color: $success;
     }
@@ -29,7 +39,6 @@
 
       p {
         margin: 0;
-        font-weight: bold;
       }
 
     }

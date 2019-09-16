@@ -14,13 +14,14 @@ form {
       }
 
       input, textarea {
-        border: 2px solid rgba(128, 128, 128, 0.2);
+        padding: 0.5em;
         width: 200px;
-
+        border: 2px solid rgba(128, 128, 128, 0.2);
+        border-radius: $border-radius;
         transition: border $transition-time ease-in-out;
 
         &:hover {
-          border: 2px solid rgba(128, 128, 128, 0.4);
+          border: 2px solid rgba($primary, 0.8);
         }
       }
     }
@@ -28,17 +29,20 @@ form {
     button {
       width: 125px;
       font-size: 14px;
-      font-weight: bold;
-      border: 2px solid rgba(128, 128, 128, 0.2);
-      background-color: #FFF;
-      margin: 0;
+      border: 2px solid rgba($primary, 0.2);
+      border-radius: $border-radius;
+      background-color: $primary;
+      color: #FFF;
       padding: 0.5em;
 
-      transition: border $transition-time ease-in-out, background-color $transition-time ease-in-out;
+      transition: border $transition-time ease-in-out,
+      background-color $transition-time ease-in-out,
+      color $transition-time ease-in-out;
 
       &:hover {
-        background-color: rgba($warning, 0.6);
-        border: 2px solid rgba(128, 128, 128, 0);
+        background-color: rgba(#FFF, 1);
+        border: 2px solid rgba($primary, 0.8);
+        color: #000;
         cursor: pointer;
       }
     }

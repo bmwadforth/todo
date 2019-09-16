@@ -36,7 +36,7 @@ export default function TaskCreator(props) {
 
     return (
         <div className="task-creator">
-            {taskCreated && <Alert title="New Task Added" status="success"/>}
+            {taskCreated && <Alert title="New Task Added" status="primary"/>}
             {error && <Alert title={error} status="danger"/>}
             <WebForm actionTitle="New Task" onSubmit={newTask}>
                 <Field id="task-title" title="Task Title" onChange={e => {
